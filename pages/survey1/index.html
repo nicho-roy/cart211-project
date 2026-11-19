@@ -16,27 +16,39 @@
 
 <body>
 
-    <div id="q1" class="question">
-        <p>What is your name?</p>
-        <input type="text" id="username" name="username" question-answer>
-    </div>
+    <form id="surveyForm">
 
-    <div id="q2" class="question">
-        <p>What is your favorite color</p>
-        <input type="color" id="color" name="color" question-answer>
-    </div>
+        <div class="question">
+            <p>What is your name?</p>
+            <input type="text" id="username" name="username" required question-answer>
+        </div>
 
+        <div class="question">
+            <p>What is your favorite color</p>
+            <input type="color" id="color" name="color" question-answer>
+        </div>
 
-    <!-- <div id="qex" question question-text="What is your name" question-type="textSmall"></div> -->
+        <div class="question">
+            <p>How old are you?</p>
+            <input type="text" id="age" name="age" question-answer>
+        </div>
 
-    <button id="submitBtn">Next</button>
+        <button id="submitBtn">Next</button>
+
+    </form>
 
 
 
 </body>
 
 <script>
-document.getElementById("submitBtn").addEventListener("click", () => {
+document.getElementById("submitBtn").addEventListener("click", e => {
+    const form = document.getElementById("surveyForm");
+    if (!form.reportValidity()) {
+        alert("POPUP PLACEHOLDER: not finished"); //TODON MAKE POPUP THING
+        return;
+    }
+    e.preventDefault(); //otherwise form thinks its a submit button, which reloads th epage
     saveAnswersToSession();
     location.href = PATH.survey[2];
 });

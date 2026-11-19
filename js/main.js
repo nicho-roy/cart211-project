@@ -1,6 +1,7 @@
 import {saveState, loadState} from "./session-state.js"
 
 //Tracked variables (not in session)
+let state = loadState();
 let secElapsed = 0; //sec
 let lastMouseX = null;
 let lastMouseY = null;
@@ -12,8 +13,10 @@ setInterval(() => {
 }, 1000);
 
 
-//event listeners
-
+//add event listeners
+document.addEventListener("mousemove",() => {
+    
+});
 
 
 
@@ -50,3 +53,6 @@ document.querySelectorAll("[question]").forEach(e => {
 });
 
 // document.querySelectorAll('[data-type="choice"]'); //ex for values of attributes
+
+//save state when window leaving
+window.addEventListener("pagehide", () => saveState(state)); 

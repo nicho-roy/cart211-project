@@ -1,4 +1,5 @@
-import {saveState, loadState} from "./session-state.js"
+import { saveState, loadState } from "./session-state.js"
+import { Question } from "./Question.js"
 
 //Tracked variables (not in session)
 let state = loadState();
@@ -13,6 +14,7 @@ setInterval(() => {
 }, 1000);
 
 
+
 //add event listeners
 document.addEventListener("mousemove",() => {
     
@@ -20,39 +22,16 @@ document.addEventListener("mousemove",() => {
 
 
 
-
-//other question types extend question
-class Question {
-    constructor(id) {
-        this.id = id;
-        this.container = document.getElementById(id)
-        this.createButton();
-    }
-
-    static setupQuestion(id) {
-        new Question(id);
-    }
-
-    createButton() {
-        const btn = document.createElement("button");
-        btn.id = this.id + "Btn";
-        btn.textContent = "Button";
-        btn.classList.add("questionBtn");
-        btn.addEventListener("click", this.onClick);
-        this.container.appendChild(btn)
-    }
-
-    onClick() {
-        console.log("clicked");
-    }
-}
-
-//runs after the page is loaded, for all that share the attribute
+/**
+ * Build questions
+ * Runs after the page is loaded, for all that share the attribute
+ * Avaiable attributes
+ */
 document.querySelectorAll("[question]").forEach(e => {
-    Question.setupQuestion(e.id);
+    const text = e.getAttribute("question-text"); 
+    const type = e.getAttribute("question-type"); 
+    Question.setupQuestion(e.id,type,text);
 });
-
-// document.querySelectorAll('[data-type="choice"]'); //ex for values of attributes
 
 //save state when window leaving
 window.addEventListener("pagehide", () => saveState(state)); 

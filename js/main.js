@@ -1,10 +1,9 @@
-//Tracked variables
+import {saveState, loadState} from "./session-state.js"
+
+//Tracked variables (not in session)
 let secElapsed = 0; //sec
-let mouseDistance = 0;
 let lastMouseX = null;
 let lastMouseY = null;
-let totalTimeIdle = 0;
-let wordsPerMin = 0;
 
 //timer loop
 setInterval(() => {

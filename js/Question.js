@@ -35,3 +35,16 @@ export class Question {
         console.log("clicked");
     }
 }
+
+
+/**
+ * ! DEPRICATED
+ * Build questions
+ * Runs after the page is loaded, for all that share the attribute
+ * Avaiable attributes
+ */
+// document.querySelectorAll("[question]").forEach(e => {
+//     const text = e.getAttribute("question-text");
+//     const type = e.getAttribute("question-type");
+//     Question.setupQuestion(e.id, type, text);
+// });

@@ -7,23 +7,39 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Survey 1</title>
     <link rel='stylesheet' href='/css/style.css'>
-    <script type="module" src="/js/main.js" defer></script>
+    <script src="/js/path.js" defer></script>
+    <script src="/js/state.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    
+
 </head>
 
 <body>
 
     <div id="q1" class="question">
         <p>What is your name?</p>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" question-answer>
     </div>
+
+    <div id="q2" class="question">
+        <p>What is your favorite color</p>
+        <input type="color" id="color" name="color" question-answer>
+    </div>
+
 
     <!-- <div id="qex" question question-text="What is your name" question-type="textSmall"></div> -->
 
-
-
+    <button id="submitBtn">Next</button>
 
 
 
 </body>
+
+<script>
+document.getElementById("submitBtn").addEventListener("click", () => {
+    saveAnswersToSession();
+    location.href = PATH.survey[2];
+});
+</script>
 
 </html>

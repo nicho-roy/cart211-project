@@ -5,13 +5,16 @@ const defaultState = {
     totalTimeIdle: 0,
     wordsPerMin: 0,
     surveyStart: Date.now(),
+    answers: {
+    },
 };
 
-export function saveState(state) {
+function saveState(state) {
     sessionStorage.setItem(KEY, JSON.stringify(state));
+    console.log(state);
 }
 
-export function loadState() {
+function loadState() {
     const sessionState = sessionStorage.getItem(KEY);
     return (sessionState) ? JSON.parse(sessionState) : {...defaultState}; //returns a copy of defaultState if not exists
 }

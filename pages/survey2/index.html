@@ -1,0 +1,40 @@
+<!-- survey 1 -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Survey 2</title>
+    <link rel='stylesheet' href='/css/style.css'>
+    <script src="/js/path.js" defer></script>
+    <script src="/js/state.js" defer></script>
+    <script src="/js/main.js" defer></script>
+
+
+</head>
+
+<body>
+
+    <div id="q1" class="question">
+        <p>Who are you</p>
+        <input type="text" id="username" name="username" question-answer>
+    </div>
+
+
+
+
+    <button id="submitBtn">Next</button>
+
+
+
+</body>
+
+<script>
+    document.getElementById("submitBtn").addEventListener("click", () => {
+        saveAnswersToSession();
+        location.href = PATH.survey[3];
+    });
+</script>
+
+</html>

@@ -11,7 +11,18 @@ let lastMouseY = null;
 //timer loop
 setInterval(() => {
     secElapsed++;
-    // console.log("sec", secElapsed);
+    if (secElapsed == 1) {
+        console.log("fired");
+        new Popup({
+            title: "Test",
+            message: "testmessagfe",
+            buttons: [
+                {label: "okay"},
+                {label: "next", onClick: () => location.href = PATH.survey[2]}
+            ]
+        });
+    }
+
 }, 1000);
 
 

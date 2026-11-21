@@ -9,6 +9,7 @@
     <link rel='stylesheet' href='/css/style.css'>
     <script src="/js/path.js" defer></script>
     <script src="/js/state.js" defer></script>
+    <script src="/js/Popup.js" defer></script>
     <script src="/js/main.js" defer></script>
     
 
@@ -42,16 +43,17 @@
 </body>
 
 <script>
-document.getElementById("submitBtn").addEventListener("click", e => {
-    const form = document.getElementById("surveyForm");
-    if (!form.reportValidity()) {
-        alert("POPUP PLACEHOLDER: not finished"); //TODON MAKE POPUP THING
-        return;
-    }
-    e.preventDefault(); //otherwise form thinks its a submit button, which reloads th epage
-    saveAnswersToSession();
-    location.href = PATH.survey[2];
-});
+    //submit button, checks of all fields are filled
+    document.getElementById("submitBtn").addEventListener("click", e => {
+        const form = document.getElementById("surveyForm");
+        if (!form.reportValidity()) {
+            alert("POPUP PLACEHOLDER: not finished"); //TODON MAKE POPUP THING
+            return;
+        }
+        e.preventDefault(); //otherwise form thinks its a submit button, which reloads th epage
+        saveAnswersToSession();
+        location.href = PATH.survey[2];
+    });
 </script>
 
 </html>

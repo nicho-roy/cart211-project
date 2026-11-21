@@ -7,6 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Survey 1</title>
     <link rel='stylesheet' href='/css/style.css'>
+    <link rel='stylesheet' href='/css/popup.css'>
     <script src="/js/path.js" defer></script>
     <script src="/js/state.js" defer></script>
     <script src="/js/Popup.js" defer></script>
@@ -16,27 +17,47 @@
 </head>
 
 <body>
+    <div class="nav-bar">
 
-    <form id="surveyForm">
+    </div>
 
-        <div class="question">
-            <p>What is your name?</p>
-            <input type="text" id="username" name="username" required question-answer>
+
+    <div class="main-container">
+        <div class="left-panel">
+
         </div>
 
-        <div class="question">
-            <p>What is your favorite color</p>
-            <input type="color" id="color" name="color" question-answer>
+        <div class="main-content">
+            <form id="surveyForm">
+        
+                <div class="question">
+                    <p>What is your name?</p>
+                    <input type="text" id="username" name="username" required question-answer>
+                </div>
+        
+                <div class="question">
+                    <p>What is your favorite color</p>
+                    <input type="color" id="color" name="color" question-answer>
+                </div>
+        
+                <div class="question">
+                    <p>How old are you?</p>
+                    <input type="text" id="age" name="age" question-answer>
+                </div>
+        
+                <button id="submitBtn">Next</button>
+        
+            </form>
         </div>
 
-        <div class="question">
-            <p>How old are you?</p>
-            <input type="text" id="age" name="age" question-answer>
+
+        <div class="right-panel">
+
         </div>
 
-        <button id="submitBtn">Next</button>
+    </div>
 
-    </form>
+    
 
 
 

@@ -11,6 +11,7 @@
     });
  */
 class Popup {
+    static zCounter = 1000;
     constructor({ title = "Notice", message = "", buttons = []}) {
         this.popup = document.createElement("dialog");
         this.popup.className = "popup";
@@ -59,6 +60,7 @@ class Popup {
      */
     show() {
         document.body.appendChild(this.popup);
+        this.popup.style.zIndex = ++Popup.zCounter;
         this.popup.show();
         return this;
     }

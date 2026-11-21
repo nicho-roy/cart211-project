@@ -1,0 +1,31 @@
+:root {
+    --bg: #fbfbfb;
+    --outline: #222222;
+    --primaryBlue: #1921bd;
+    --secondaryBlue: #4e7dea;
+}
+
+.nav-bar {
+    border: 1px, solid, var(--primaryBlue);
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.main-content {
+    border: 1px, solid, var(--outline);
+    width: 60%;
+}
+
+.left-panel {
+    border: 1px, solid, red;
+}
+
+.right-panel {
+    border: 1px, solid, red;
+}
+
+

@@ -6,6 +6,7 @@ const defaultState = {
     wordsPerMin: 0,
     surveyStart: Date.now(),
     answers: {
+        username: "dimadome",
     },
 };
 

@@ -8,27 +8,11 @@
     --secondaryBlue: #4e7dea;
 }
 
-.nav-bar {
-    border: 1px, solid, var(--primaryBlue);
+body, html {
+    border: 1px, solid, black;
+    height: 100%;
+    /* margin: 0px;  //remove margin */
 }
 
-.main-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.main-content {
-    border: 1px, solid, var(--outline);
-    width: 60%;
-}
-
-.left-panel {
-    border: 1px, solid, red;
-}
-
-.right-panel {
-    border: 1px, solid, red;
-}
 
 

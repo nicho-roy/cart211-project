@@ -1,5 +1,8 @@
 :root {
-    --bg: #fbfbfb;
+    --white: #ffffff;
+    --black: #000000;
+    --panelGrey: #b2b2b2;
+    --alertRed: #d12929;
     --outline: #222222;
     --primaryBlue: #1921bd;
     --secondaryBlue: #4e7dea;

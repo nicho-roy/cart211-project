@@ -25,7 +25,7 @@ class Popup {
 
         const closeBtn = document.createElement("button");
         closeBtn.type = "button";
-        closeBtn.textContent = "X";
+        closeBtn.textContent = "✖";
         closeBtn.addEventListener("click", () => this.close());
 
         this.header.append(titleElement,closeBtn);

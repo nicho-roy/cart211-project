@@ -1,0 +1,42 @@
+.popup {
+    background-color: var(--panelGrey);
+    border-style: outset;
+    width: 250px;
+    padding: 2px;
+}
+
+/* stop button focus bug */
+.popup button:focus {
+    outline: none;
+}
+
+.popup-header {
+    background-color: var(--primaryBlue);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+}
+
+.popup button {
+    background-color: var(--panelGrey);
+    border-style: outset;
+}
+
+.popup-body {
+    background-color: var(--panelGrey);
+    padding: 10px;
+}
+
+.popup-footer {
+    background-color: var(--panelGrey);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.popup-footer button {
+    width: 70px;
+    padding: 5px;
+}

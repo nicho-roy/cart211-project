@@ -6,11 +6,12 @@
     --outline: #222222;
     --primaryBlue: #1921bd;
     --secondaryBlue: #4e7dea;
+    --win95: #008080;
 }
 
 body, html {
-    border: 1px, solid, black;
     height: 100%;
+    background-color: var(--win95);
     /* margin: 0px;  //remove margin */
 }
 

@@ -1,8 +1,11 @@
 .nav-bar {
-    border: 1px, solid, var(--primaryBlue);
+    height: 5%;
+    background-color: var(--primaryBlue);
+    margin-bottom: 8px;
 }
 
 .main-container {
+    /* background-color: var(--panelGrey); */
     height: 100%;
     display: flex;
     justify-content: center;
@@ -10,18 +13,19 @@
 }
 
 .main-content {
-    border: 1px, solid, var(--outline);
+    background-color: var(--white);
     width: 70%;
 }
 
 .left-panel {
-    border: 1px, solid, red;
+    background-color: var(--white);
     width: 10%;
 }
 
 .right-panel {
-    border: 1px, solid, red;
+    background-color: var(--white);
     width: 20%;
+    padding: 4px;
 }
 
 .right-panel img {

@@ -31,6 +31,12 @@
 .popup-body {
     background-color: var(--panelGrey);
     padding: 10px;
+    text-align: center;
+}
+
+.popup-body img {
+    width: 100%;
+    
 }
 
 .popup-footer {

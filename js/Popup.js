@@ -33,7 +33,17 @@ class Popup {
         //Body
         this.body = document.createElement("div");
         this.body.className = "popup-body";
-        this.body.textContent = message;
+        //allow for html input
+        if (message instanceof Node) {
+            //an element variable: img, div, etc...
+            this.body.appendChild(message);
+        } else if (message && message.html !== undefined) {
+            //an obj with html: { html: "....."}
+            this.body.innerHTML = message.html;
+        } else {
+            //plain str
+            this.body.textContent = message;
+        }
 
         //Footer
         this.footer = document.createElement("div");
@@ -52,7 +62,6 @@ class Popup {
         //append all to popup
         this.popup.append(this.header,this.body,this.footer);
         this.makeDraggable();
-        this.show();
     }
 
     /**

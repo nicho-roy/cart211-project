@@ -8,22 +8,40 @@ let secElapsed = 0; //sec
 let lastMouseX = null;
 let lastMouseY = null;
 
+//construct popups
+const testPopup = new Popup({
+    title: "Test",
+    message: "testmessagfe",
+    buttons: [
+        { label: "okay" },
+        { label: "next", onClick: () => location.href = PATH.survey[2] }
+    ]
+});
+const adPopup = new Popup({
+    title: "Advert",
+    message: { html: `<img src="../../images/virus.gif" alt="advert">` },
+    buttons: [
+        { label: "close" },
+        { label: "Visit", onClick: () => sweepiePopup.show() }
+    ]
+});
+const sweepiePopup = new Popup({
+    title: "Notice",
+    message: { html: `<p>stay on track</p>` },
+    buttons: [
+        { label: "okay" },
+    ]
+});
+
 //timer loop
 setInterval(() => {
     secElapsed++;
     if (secElapsed == 1) {
-        console.log("fired");
-        new Popup({
-            title: "Test",
-            message: "testmessagfe",
-            buttons: [
-                {label: "okay"},
-                {label: "next", onClick: () => location.href = PATH.survey[2]}
-            ]
-        });
+        adPopup.show();
     }
 
 }, 1000);
+
 
 
 

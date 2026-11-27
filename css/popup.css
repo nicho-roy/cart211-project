@@ -36,7 +36,7 @@
 
 .popup-body img {
     width: 100%;
-    
+    border: 2px outset #c0c0c0;
 }
 
 .popup-footer {

@@ -15,7 +15,14 @@
 .main-content {
     background-color: var(--white);
     width: 70%;
+    padding: 10px 16px;
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000000;
 }
+
 
 .left-panel {
     background-color: var(--white);
@@ -32,3 +39,72 @@
     width: 100%;
 }
 
+
+
+
+/* Main Content Text Styling */
+.main-content button {
+    background-color: var(--panelGrey);
+    border: 2px outset #ffffff;
+    padding: 4px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-content button:active {
+    border-style: inset;
+}
+
+.main-content input[type="text"] {
+    border: 2px inset #c0c0c0;
+    font-family: "Courier New", Courier, monospace;
+    padding: 2px;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    text-align: center;
+    color: var(--primaryBlue);
+    margin: 10px 0;
+}
+
+.main-content h2 {
+    font-size: 24px;
+    color: #000080;
+    border-bottom: 2px solid #000080;
+    margin-top: 20px;
+}
+
+.main-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-content p {
+    margin: 10px 0;
+}
+
+.main-content a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+.main-content a:visited {
+    color: #551a8b;
+}
+
+.main-content a:hover {
+    color: #ff0000;
+}
+
+.main-content hr {
+    border: none;
+    border-top: 2px groove #808080;
+    margin: 16px 0;
+}
+
+.main-content mark {
+    background-color: #ffff00;
+    color: #ff0000;
+    font-weight: bold;
+}

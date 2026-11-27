@@ -19,18 +19,26 @@
 
 <body>
     <div class="nav-bar">
-
+        <a href="../../index.html">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Guestbook</a> |
+        <a href="#">Links</a>
     </div>
 
 
     <div class="main-container">
         <div class="left-panel">
             <div class="watcher-container">
-                <img src="../../images/smiley-blink.gif" alt="advert">
+                <img id="smiley" src="../../images/smiley-happy.gif" alt="smiley">
             </div>
         </div>
 
         <div class="main-content">
+
+            <h1>Welcome To Our Survey</h1>
+            <p>Please answer a few quick questions below. <b>It only takes a minute!</b></p>
+            <hr>
+
             <form id="surveyForm">
         
                 <div class="question">
@@ -76,6 +84,11 @@
 
     </div>
 
+    <div class="footer">
+        <hr>
+        &copy; 1999 Survey Co. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Webmaster</a>
+    </div>
+
     
 
 
@@ -87,7 +100,8 @@
     document.getElementById("submitBtn").addEventListener("click", e => {
         const form = document.getElementById("surveyForm");
         if (!form.reportValidity()) {
-            alert("POPUP PLACEHOLDER: not finished"); //TODON MAKE POPUP THING
+            finishSurveyPopup.show();
+            setSmileyMood(SmileyMood.CONTENT);
             return;
         }
         e.preventDefault(); //otherwise form thinks its a submit button, which reloads th epage

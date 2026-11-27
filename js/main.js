@@ -8,10 +8,18 @@ let secElapsed = 0; //sec
 let lastMouseX = null;
 let lastMouseY = null;
 
+const SmileyMood = Object.freeze({
+    HAPPY: "../../images/smiley-happy.gif",
+    CONTENT: "../../images/smiley-content.png",
+    NEUTRAL: "../../images/smiley-neutral.png",
+    WEIRD: "../../images/smiley-weird.png",
+});
+let smileyMood = SmileyMood.HAPPY;
+
 //construct popups
 const testPopup = new Popup({
     title: "Test",
-    message: "testmessagfe",
+    message: "test message",
     buttons: [
         { label: "okay" },
         { label: "next", onClick: () => location.href = PATH.survey[2] }
@@ -22,14 +30,21 @@ const adPopup = new Popup({
     message: { html: `<img src="../../images/virus.gif" alt="advert">` },
     buttons: [
         { label: "close" },
-        { label: "Visit", onClick: () => sweepiePopup.show() }
+        { label: "Visit", onClick: () => { stayOnTrackPopup.show(); setSmileyMood(SmileyMood.NEUTRAL) } }
     ]
 });
-const sweepiePopup = new Popup({
+const stayOnTrackPopup = new Popup({
     title: "Notice",
     message: { html: `<p>stay on track</p>` },
     buttons: [
-        { label: "okay" },
+        { label: "okay" , onClick: () => setSmileyMood(SmileyMood.HAPPY) },
+    ]
+});
+const finishSurveyPopup = new Popup({
+    title: "Notice",
+    message: { html: `<b>Please answer all quetions before continuing</b>` },
+    buttons: [
+        { label: "okay", onClick: () => setSmileyMood(SmileyMood.HAPPY) },
     ]
 });
 
@@ -57,6 +72,11 @@ document.addEventListener("mousemove",() => {
 
 
 //FUNCT
+function setSmileyMood(mood) {
+    smileyMood = mood;
+    document.getElementById("smiley").src = mood;
+}
+
 function saveAnswersToSession() {
     const answers = getAnswers();
     state.answers = {...state.answers, ...answers}; //merge state answers and answers

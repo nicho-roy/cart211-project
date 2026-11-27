@@ -1,6 +1,8 @@
 // import { saveState, loadState } from "./state.js"
 // import { PATH } from "./path.js"
 
+//TODON minesweeper pog face
+
 //Tracked variables (not in session)
 let state = loadState();
 console.log("state:",state);
